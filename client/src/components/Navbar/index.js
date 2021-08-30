@@ -26,14 +26,14 @@ function Navbar() {
               <Button colorScheme="pink">Login</Button>
             </Link>
             <Link to="/signup">
-              <Button>Register</Button>
+              <Button colorScheme="pink">Register</Button>
             </Link>
           </>
         )}
         {loggedIn && (
           <>
             <Link to="/profile">
-              <Button colorScheme="pink">Profile</Button>
+              <Button>Profile</Button>
             </Link>
           </>
         )}

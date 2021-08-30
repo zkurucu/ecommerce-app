@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signin from "./pages/Auth/Signin";
 import Signup from "./pages/Auth/Signup";
 import Products from "./pages/Products";
+import Profile from "./pages/Profile";
 import ProductDetail from "./pages/ProductDetail";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/product/:product_id" exact component={ProductDetail} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
+            <Route path="/profile" component={Profile} />
           </Switch>
         </div>
       </div>
