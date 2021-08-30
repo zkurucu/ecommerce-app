@@ -9,9 +9,17 @@ export const fetchProductList = async ({ pageParam = 0 }) => {
 };
 
 export const fetchProduct = async (id) => {
-const { data } = await axios.get(
+  const { data } = await axios.get(
     `${process.env.REACT_APP_BASE_ENDPOINT}/product/${id}`
   );
 
+  return data;
+};
+
+export const fetchRegister = async (input) => {
+  const { data } = await axios.post(
+    `${process.env.REACT_APP_BASE_ENDPOINT}/auth/register`,
+    input
+  );
   return data;
 };
