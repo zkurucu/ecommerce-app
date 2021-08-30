@@ -1,6 +1,9 @@
 import { fetchProduct } from "../../api";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { Box, Text, Button } from "@chakra-ui/react";
+import moment from "moment";
+import ImageGallery from "react-image-gallery";
 
 function ProductDetail() {
   const { product_id } = useParams();
@@ -16,9 +19,26 @@ function ProductDetail() {
     return <div>Error.</div>;
   }
 
-  console.log(data);
+  const images = data.photos.map((url) => ({ original: url }));
 
-  return <div>Product Detail {product_id}</div>;
+  console.log(process.env.REACT_APP_BASE_ENDPOINT);
+
+  return (
+    <div>
+      <Button colorScheme="pink">Add to basket</Button>
+
+      <Text as="h2" fontSize="2x1">
+        {data.title}
+      </Text>
+      <Text>{moment(data.createdAt).format("DD/MM/YYYY")}</Text>
+
+      <p>{data.description}</p>
+
+      <Box margin="10">
+        <ImageGallery items={images} />
+      </Box>
+    </div>
+  );
 }
 
 export default ProductDetail;
