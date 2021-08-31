@@ -10,6 +10,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Basket from "./pages/Basket";
 import Error404 from "./pages/Error404";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/basket" component={Basket} />
             <Route path="*" component={Error404} />
             <ProtectedRoute path="/profile" component={Profile} />
+            <ProtectedRoute path="/admin" component={Admin} admin={true} />
           </Switch>
         </div>
       </div>
