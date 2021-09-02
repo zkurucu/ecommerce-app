@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 // contexts
 import { AuthProvider } from "./contexts/AuthContext";
 import { BasketProvider } from "./contexts/BasketContext";
+import "antd/dist/antd.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
